@@ -1,6 +1,9 @@
 import csv
 import datetime
 from datetime import date
+from geopy.geocoders import Nominatim
+import openrouteservice
+
 
 def update_dict(): ###go through text file to extract relevant fields
     states = [ 'AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA',
@@ -80,7 +83,6 @@ def update_dict(): ###go through text file to extract relevant fields
 
 
 def geocode(address): ##get latitude/longitude from address input
-    from geopy.geocoders import Nominatim
     geolocator = Nominatim(user_agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36')
     try:
         try:
@@ -95,12 +97,10 @@ def geocode(address): ##get latitude/longitude from address input
         longitude = loc.longitude
         coordinates = (longitude, latitude) ##formatted for running commute_time()
         return coordinates
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
 def commute_time(): ##calculate commute characteristics to/from house from openrouteservice API
-    import openrouteservice
-    import datetime
     client = openrouteservice.Client(key='5b3ce3597851110001cf6248e7321d73802a4fd0969a9540efa68f46')
     toaddress = input('Where do you want to calculate commutes to? (Address, City, State): (Press enter to default to Bedford, MA) ')
     if toaddress == '':
@@ -114,7 +114,8 @@ def commute_time(): ##calculate commute characteristics to/from house from openr
         duration = summary.get('duration')
         duration = str(datetime.timedelta(0, duration)) ##convert seconds to hours/minutes/seconds
         return distance, duration, toaddress
-    except:
+    except Exception as e:
+        print(e)
         pass
 
 def csv_add(dictionary):
@@ -124,7 +125,7 @@ def csv_add(dictionary):
         dictionary.update({'commute_time': duration})
         dictionary.update({'commute_to_address':toaddress})
     except:
-        pass
+        print('Unable to calculate commute time and distance.')
     today = date.today()
     dictionary.update({'date_added':today})
     with open('zillow.csv', 'r+') as file:
