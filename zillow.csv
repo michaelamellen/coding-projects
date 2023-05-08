@@ -1,9 +1,5 @@
 price,beds,baths,sqft,address,city,state,zip,yr_built,heating,ac,plot_size,commute_distance,commute_time,commute_to_address,date_added
 474500,3,3,1807,18493 Colonial Dr,Culpeper,VA,22701,1978,"Central, electric","Central a/c, electric",1.10 Acres,102.72,2:40:37.500000,"1 Main St, Baltimore, MD",2023-05-07
 465900,4,2,1809,3109 Via Bella Rosa Ave,Rosamond,CA,93560,2021,0,0,"7,405 sqft",123.23,3:10:56.400000,"6554 Park Boulevard, Joshua Tree, CA",2023-05-07
-699900,3,1,1516,30 McCormack Ave,Medford,MA,02155,1946,0,0,"4,792 sqft",11.94,0:29:48.600000,"10 Mudge Way, Bedford, MA",2023-05-07
-699900,3,1,1516,30 McCormack Ave,Medford,MA,02155,1946,0,0,"4,792 sqft",none,none,none,2023-05-08
-699900,3,1,1516,30 McCormack Ave,Medford,MA,02155,1946,0,0,"4,792 sqft",none,none,none,2023-05-08
-699900,3,1,1516,30 McCormack Ave,Medford,MA,02155,1946,0,0,"4,792 sqft",none,none,none,2023-05-08
-699900,3,1,1516,30 McCormack Ave,Medford,MA,02155,1946,0,0,"4,792 sqft",none,none,none,2023-05-08
-699900,3,1,1516,30 McCormack Ave,Medford,MA,02155,1946,0,0,"4,792 sqft",11.94,0:29:48.600000,"10 Mudge Way, Bedford, MA",2023-05-08
+399000,4,2,1761,3664 Wyandotte Ln,Rosamond,CA,93560,1992,No data,Central air/refrig,"6,969 sqft",2489.72,"1 day, 23:57:28.500000","10 Mudge Way, Bedford, MA",2023-05-08
+719000,4,2,1972,1 Linden St,Woburn,MA,01801,1910,"Hot water, oil",0,0.28 Acres,6.41,0:16:58.800000,"10 Mudge Way, Bedford, MA",2023-05-08
